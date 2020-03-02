@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 /// <summary>
 /// This class will allow the character to detect interactive objects when they look at them.
@@ -10,19 +11,31 @@ public class DetectLookedAtInteractiveObjects : MonoBehaviour
     [Tooltip("Starting point of raycast used to detect interactives")]
     [SerializeField]
     private Transform raycastOrigin;
+
     [Tooltip("How far from the raycastOrigin we will search for interactive elements")]
     [SerializeField]
     private float maxRange = 5.0f;
 
+    /// <summary>
+    /// Event raised when the player looks at differenr IInteractive
+    /// </summary>
+    public static event Action<IInteractive> LookedAtInteractiveChanged;
+
     public IInteractive LookedAtInteractive
     {
         get { return lookedAtInteractive; }
-        private set { lookedAtInteractive = value; }
+        private set
+        {
+            bool isInteractiveChanged = value != lookedAtInteractive;
+            if (isInteractiveChanged)
+            {
+                lookedAtInteractive = value;
+                LookedAtInteractiveChanged?.Invoke(LookedAtInteractive);
+            }
+        }
     }
 
    private IInteractive lookedAtInteractive;
-
-
 
     // Update is called once per frame
     private void FixedUpdate()
