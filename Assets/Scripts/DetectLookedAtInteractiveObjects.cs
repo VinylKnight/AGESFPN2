@@ -14,6 +14,16 @@ public class DetectLookedAtInteractiveObjects : MonoBehaviour
     [SerializeField]
     private float maxRange = 5.0f;
 
+    public IInteractive LookedAtInteractive
+    {
+        get { return lookedAtInteractive; }
+        private set { lookedAtInteractive = value; }
+    }
+
+   private IInteractive lookedAtInteractive;
+
+
+
     // Update is called once per frame
     private void FixedUpdate()
     {
@@ -22,6 +32,8 @@ public class DetectLookedAtInteractiveObjects : MonoBehaviour
         bool objectWasDetected = Physics.Raycast(raycastOrigin.position, raycastOrigin.forward, out hitInfo, maxRange);
 
         IInteractive interactive = null;
+
+        LookedAtInteractive = interactive;
 
         if (objectWasDetected)
         {
