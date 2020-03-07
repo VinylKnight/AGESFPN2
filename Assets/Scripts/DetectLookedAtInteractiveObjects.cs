@@ -17,7 +17,7 @@ public class DetectLookedAtInteractiveObjects : MonoBehaviour
     private float maxRange = 5.0f;
 
     /// <summary>
-    /// Event raised when the player looks at differenr IInteractive
+    /// Event raised when the player looks at different IInteractive
     /// </summary>
     public static event Action<IInteractive> LookedAtInteractiveChanged;
 
@@ -40,7 +40,15 @@ public class DetectLookedAtInteractiveObjects : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        Debug.DrawRay(raycastOrigin.position,raycastOrigin.forward*maxRange,Color.red);
+       LookedAtInteractive = GetLookedAtInteractive();
+    }
+    /// <summary>
+    /// Raycasts forward from the camera to look for IInteractives.
+    /// </summary>
+    /// <returns>The first IInteractive detected, or null if none are found.</returns>
+    private IInteractive GetLookedAtInteractive()
+    {
+        Debug.DrawRay(raycastOrigin.position, raycastOrigin.forward * maxRange, Color.red);
         RaycastHit hitInfo;
         bool objectWasDetected = Physics.Raycast(raycastOrigin.position, raycastOrigin.forward, out hitInfo, maxRange);
 
@@ -53,9 +61,6 @@ public class DetectLookedAtInteractiveObjects : MonoBehaviour
             //Debug.Log ($"Player is looking at: {hitInfo.collider.gameObject.name}");
             interactive = hitInfo.collider.gameObject.GetComponent<IInteractive>();
         }
-        if (interactive != null)
-        {
-            interactive.interactWith();
-        }
+        return interactive;
     }
 }

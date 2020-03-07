@@ -14,7 +14,8 @@ public class LookedtAtInteractiveDisplayText : MonoBehaviour
 
     private void Awake()
     {
-        displayText = GetComponent<Text>();   
+        displayText = GetComponent<Text>();
+        UpdateDisplayText();
     }
     private void UpdateDisplayText()
     {
@@ -24,11 +25,17 @@ public class LookedtAtInteractiveDisplayText : MonoBehaviour
             displayText.text = string.Empty;
     }
 
-    private void OnLookedAtInteractiveChanged()
+    /// <summary>
+    /// Event handler for DetectLookedAtInteractive.LookedAtInteractiveChanged
+    /// </summary>
+    /// <param name="newLookedAtInteractive">Reference to the new IInteractive the player is looking at.</param>
+    private void OnLookedAtInteractiveChanged(IInteractive newLookedAtInteractive)
     {
+        lookedAtInteractive = newLookedAtInteractive;
         UpdateDisplayText();
     }
 
+    #region Event Subscription / Unsubscription
     private void OnEnable()
     {
         DetectLookedAtInteractiveObjects.LookedAtInteractiveChanged += OnLookedAtInteractiveChanged;
@@ -36,6 +43,7 @@ public class LookedtAtInteractiveDisplayText : MonoBehaviour
 
     private void OnDisable()
     {
-        
+        DetectLookedAtInteractiveObjects.LookedAtInteractiveChanged -= OnLookedAtInteractiveChanged;
     }
+    #endregion
 }
