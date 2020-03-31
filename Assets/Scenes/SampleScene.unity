@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8439,7 +8439,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1b3ec8afa065c34db40bc411da4e617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 338707876}
   displayText: InteractiveObject
 --- !u!82 &338707876
 AudioSource:
@@ -17689,9 +17688,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77ba6b5901d64d2408fd2e967b9099b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 781556971}
   displayText: ToggleSetActive
   objectToToggle: {fileID: 338707874}
+  isReusable: 1
 --- !u!82 &781556971
 AudioSource:
   m_ObjectHideFlags: 0

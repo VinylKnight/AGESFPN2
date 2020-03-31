@@ -14,7 +14,7 @@ public class ToggleSetActive : InteractiveObject
     private bool hasBeenUsed = false;
 
     /// <summary>
-    /// Toggel the activeSelf value for the objectToToggle when the player interacts with this item.
+    /// Toggle the activeSelf value for the objectToToggle when the player interacts with this item.
     /// </summary>
     public override void InteractWith()
     {
