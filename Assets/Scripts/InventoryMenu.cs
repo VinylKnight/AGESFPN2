@@ -2,16 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityEngine.UI;
 
 public class InventoryMenu : MonoBehaviour
 {
     [SerializeField]
     private GameObject inventoryMenuItemTogglePrefab;
 
+    [Tooltip("Content of the scrollview for the list of inventory items.")]
+    [SerializeField]
+    private Transform inventoryListContentArea;
+
     private static InventoryMenu instance;
     private CanvasGroup canvasGroup;
     private RigidbodyFirstPersonController rigidbodyFirstPersonController;
     private AudioSource audioSource;
+    
 
     public static InventoryMenu Instance
     {
@@ -38,7 +44,9 @@ public class InventoryMenu : MonoBehaviour
     /// <param name="inventoryObjectToAdd"></param>
     public void AddItemToMenu(InventoryObject inventoryObjectToAdd)
     {
-        Instantiate(inventoryMenuItemTogglePrefab);
+        GameObject clone = Instantiate(inventoryMenuItemTogglePrefab, inventoryListContentArea);
+        InventoryMenuItemToggle toggle = clone.GetComponent<InventoryMenuItemToggle>();
+        toggle.AssociatedInventoryObject = inventoryObjectToAdd;
     }
 
     private void ShowMenu()
