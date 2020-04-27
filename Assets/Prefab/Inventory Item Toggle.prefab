@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1731900458177818612}
   - component: {fileID: 5893780322658720920}
+  - component: {fileID: 979516378}
   m_Layer: 5
   m_Name: Inventory Item Toggle
   m_TagString: Untagged
@@ -87,6 +88,19 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
+--- !u!114 &979516378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3432405321113332345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe70446bef0b1af428b585f240ee9ed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iconImage: {fileID: 8986445036958164357}
 --- !u!1 &4542088608835805725
 GameObject:
   m_ObjectHideFlags: 0

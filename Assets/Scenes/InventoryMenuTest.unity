@@ -23753,6 +23753,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 969344866}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &979516377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3432405321113332345, guid: 2bcb544185db5d74aa65e5e9a50e3177,
+    type: 3}
+  m_PrefabInstance: {fileID: 6798808477472081209}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &985273429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25159,6 +25165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c9eec517ca578489a981173c253bb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryMenuItemTogglePrefab: {fileID: 979516377}
 --- !u!82 &1048747697
 AudioSource:
   m_ObjectHideFlags: 0
@@ -27998,6 +28005,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 18b35e3efa41ae946a7034154da40016,
         type: 3}
+    - target: {fileID: 7310260410409982521, guid: 46318a5483255524e8fed268855c5db0,
+        type: 3}
+      propertyPath: objectName
+      value: Note From The Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310260410409982521, guid: 46318a5483255524e8fed268855c5db0,
+        type: 3}
+      propertyPath: displayText
+      value: Take Note From The Boss
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46318a5483255524e8fed268855c5db0, type: 3}
 --- !u!1001 &1177358083
@@ -50765,5 +50782,26 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1162805220}
+    - target: {fileID: 7310260410409982521, guid: 46318a5483255524e8fed268855c5db0,
+        type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 3d58dde9610896945b3d8c62ffbdda36,
+        type: 3}
+    - target: {fileID: 7310260410409982521, guid: 46318a5483255524e8fed268855c5db0,
+        type: 3}
+      propertyPath: objectName
+      value: Office Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310260410409982521, guid: 46318a5483255524e8fed268855c5db0,
+        type: 3}
+      propertyPath: description
+      value: First floor office key. It leads to the second floor.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7310260410409982521, guid: 46318a5483255524e8fed268855c5db0,
+        type: 3}
+      propertyPath: displayText
+      value: Take Office Key
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46318a5483255524e8fed268855c5db0, type: 3}
