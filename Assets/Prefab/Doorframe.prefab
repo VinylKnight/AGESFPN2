@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6566310824035688041}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 119.921875, y: 0.359375, z: 117.234375}
-  m_LocalScale: {x: 1, y: 0.7, z: 1}
+  m_LocalScale: {x: 0.72, y: 0.7, z: 1}
   m_Children:
   - {fileID: 6566310824916400585}
   m_Father: {fileID: 0}
@@ -538,7 +538,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 15cb6b096bb78c7479c93c6e26153387, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -867,7 +867,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 2c0bb951fb8a2e44a9fb35bc4af3d739, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1030,10 +1030,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayText: Door
   key: {fileID: 0}
-  consumesKey: 0
+  consumesKey: 1
   lockedDisplayText: Locked
-  lockedAudioClip: {fileID: 0}
-  openAudioClip: {fileID: 0}
+  lockedAudioClip: {fileID: 8300000, guid: 18f1b4da3c556b84f838ef4189600f96, type: 3}
+  openAudioClip: {fileID: 8300000, guid: ce06b471ecbd90f4d966190c5851935d, type: 3}
 --- !u!1 &6566310825591249472
 GameObject:
   m_ObjectHideFlags: 0

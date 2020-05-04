@@ -1816,7 +1816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6552860f30defa4da3279dfff6cdcad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSceneName: SampleScene
+  gameSceneName: InventoryMenuTest
   creditsMenuPanel: {fileID: 1563785949}
   titleMenuPanel: {fileID: 843563411}
 --- !u!82 &1107997089
