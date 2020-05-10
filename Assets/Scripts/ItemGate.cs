@@ -32,6 +32,10 @@ public class ItemGate : InteractiveObject
     [SerializeField]
     private GameObject objectToToggle2;
 
+    [Tooltip("GameObject that will be toggled between active and nonactive.")]
+    [SerializeField]
+    private GameObject objectToToggle3;
+
     private bool hasBeenUsed = false;
 
     //public override string DisplayText => isLocked ? lockedDisplayText : base.DisplayText;
@@ -93,6 +97,7 @@ public class ItemGate : InteractiveObject
                 base.InteractWith();
                 objectToToggle.SetActive(!objectToToggle.activeSelf);
                 objectToToggle2.SetActive(!objectToToggle2.activeSelf);
+                objectToToggle3.SetActive(!objectToToggle3.activeSelf);
                 hasBeenUsed = true;
                 displayText = string.Empty;
                 isOpen = true;
