@@ -9,9 +9,9 @@ public class OpenLink : MonoBehaviour
         Application.OpenURL("https://freesound.org/");
     }
 
-    public void OpenAsset()
+    public void OpenSnapsAsset()
     {
-        Application.OpenURL("https://assetstore.unity.com/packages/3d/environments/sci-fi/sci-fi-styled-modular-pack-82913");
+        Application.OpenURL("https://assetstore.unity.com/packages/3d/environments/snaps-prototype-office-137490");
     }
 
     public void OpenMusic()

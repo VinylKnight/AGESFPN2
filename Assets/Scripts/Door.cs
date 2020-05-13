@@ -48,6 +48,7 @@ public class Door : InteractiveObject
     private bool isLocked;
     private Animator animator;
     private bool isOpen;
+    private InventoryMenu inventoryMenu;
     /// <summary>
     /// Using a constructor here to initialize displayText in the editor.
     /// </summary>
@@ -61,6 +62,7 @@ public class Door : InteractiveObject
         base.Awake();
         animator = GetComponent<Animator>();
         InitializeIsLocked();
+        inventoryMenu = FindObjectOfType<InventoryMenu>();
     }
 
     private void InitializeIsLocked()
@@ -96,6 +98,9 @@ public class Door : InteractiveObject
     {
         isLocked = false;
         if (key != null && consumesKey)
+        {
             PlayerInventory.InventoryObjects.Remove(key);
+            inventoryMenu.DestroyItemFromInventory(key);
+        }
     }
 }

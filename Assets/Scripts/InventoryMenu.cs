@@ -57,6 +57,18 @@ public class InventoryMenu : MonoBehaviour
         toggle.AssociatedInventoryObject = inventoryObjectToAdd;
     }
 
+    public void DestroyItemFromInventory(InventoryObject destroyedInventoryObject)
+    {
+        var inventoryItemsList = FindObjectsOfType<InventoryMenuItemToggle>();
+        foreach (InventoryMenuItemToggle inventoryMenuItemToggle in inventoryItemsList)
+        {
+            if (inventoryMenuItemToggle.AssociatedInventoryObject == destroyedInventoryObject)
+            {
+                Destroy(inventoryMenuItemToggle.gameObject);
+            }
+        }
+    }
+
     private void ShowMenu()
     {
         canvasGroup.alpha = 1;

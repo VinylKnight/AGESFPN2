@@ -36,8 +36,6 @@ public class ItemGate : InteractiveObject
     [SerializeField]
     private GameObject objectToToggle3;
 
-    private bool hasBeenUsed = false;
-
     //public override string DisplayText => isLocked ? lockedDisplayText : base.DisplayText;
 
     public override string DisplayText
@@ -60,6 +58,7 @@ public class ItemGate : InteractiveObject
     private bool hasKey => PlayerInventory.InventoryObjects.Contains(key);
     private bool isLocked;
     private bool isOpen;
+    private InventoryMenu inventoryMenu;
     /// <summary>
     /// Using a constructor here to initialize displayText in the editor.
     /// </summary>
@@ -71,8 +70,8 @@ public class ItemGate : InteractiveObject
     protected override void Awake()
     {
         base.Awake();
-        
         InitializeIsLocked();
+        inventoryMenu = FindObjectOfType<InventoryMenu>();
     }
 
     private void InitializeIsLocked()
@@ -98,20 +97,20 @@ public class ItemGate : InteractiveObject
                 objectToToggle.SetActive(!objectToToggle.activeSelf);
                 objectToToggle2.SetActive(!objectToToggle2.activeSelf);
                 objectToToggle3.SetActive(!objectToToggle3.activeSelf);
-                hasBeenUsed = true;
                 displayText = string.Empty;
                 isOpen = true;
-                UnlockDoor();
+                UnlockGate();
             }
             base.InteractWith();// This plays a sound effect!
         }
 
     }
 
-    private void UnlockDoor()
+    private void UnlockGate()
     {
         isLocked = false;
         if (key != null && consumesKey)
             PlayerInventory.InventoryObjects.Remove(key);
+        inventoryMenu.DestroyItemFromInventory(key);
     }
 }
