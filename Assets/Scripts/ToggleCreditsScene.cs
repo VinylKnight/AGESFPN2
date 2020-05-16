@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class ToggleCreditsScene : InteractiveObject
 {
-
+    
     public override void InteractWith()
     {
         SceneManager.LoadScene("TitleMenu");
-        PanelState.IsCreditsEnabled = true;
-        PanelState.IsTitleEnabled = false;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         base.InteractWith();    
     }
 }
