@@ -12,18 +12,25 @@ public class TitleMenu : MonoBehaviour
     [SerializeField]
     private GameObject titleMenuPanel;
 
+    
+
+    public GameObject CreditsMenuPanel => creditsMenuPanel;
+    public GameObject TitleMenuPanel => titleMenuPanel;
+
     public void LoadGameScene()
     {
         SceneManager.LoadScene(gameSceneName);
     }
     public void ShowCredits()
     {
-        creditsMenuPanel.SetActive(true);
+        PanelState.IsCreditsEnabled = true;
+        creditsMenuPanel.SetActive(PanelState.IsCreditsEnabled);
 
     }
     public void ShowTitle()
     {
-        titleMenuPanel.SetActive(true);
+        PanelState.IsTitleEnabled = true;
+        titleMenuPanel.SetActive(PanelState.IsTitleEnabled);
     }
     public void ExitGame()
     {
